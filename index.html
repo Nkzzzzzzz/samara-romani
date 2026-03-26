@@ -228,37 +228,45 @@
     }
     .nav-cta:hover { background: var(--sage-pale); border-color: var(--sage); }
 
-    /* Mobile: hide desktop nav */
+    /* Mobile: hide desktop nav tabs pill, show second-row nav instead */
     @media (max-width: 860px) {
       .nav-tabs { display: none; }
-      .mobile-menu-btn { display: flex; }
+      .mobile-menu-btn { display: none; }
+      .mobile-nav-row { display: flex; }
     }
-    .mobile-menu-btn {
-      display: none; align-items: center; gap: 8px;
-      background: none; border: 1.5px solid var(--sage-light); cursor: pointer;
-      font-size: 0.74rem; font-weight: 600; color: var(--sage);
-      padding: 9px 16px; border-radius: 100px;
-      transition: background .2s, border-color .2s;
-    }
-    .mobile-menu-btn:hover { background: var(--sage-pale); border-color: var(--sage); }
-    .mobile-tabs {
+    .mobile-menu-btn { display: none; }
+
+    /* Second nav row — always visible on mobile */
+    .mobile-nav-row {
       display: none;
-      position: fixed; top: 65px; left: 0; right: 0; z-index: 299;
-      background: var(--white);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      gap: 6px;
+      padding: 0 var(--px) 12px;
       border-bottom: 1px solid var(--linen);
-      padding: 12px var(--px);
-      flex-direction: column; gap: 4px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+      background: rgba(255,255,255,0.95);
     }
-    .mobile-tabs.open { display: flex; }
-    .mobile-tab {
-      font-size: 0.84rem; font-weight: 600; color: var(--ink-mid);
-      padding: 12px 16px; border-radius: 10px;
-      cursor: pointer; border: none; background: none; text-align: left;
-      transition: background .2s, color .2s;
+    .mobile-nav-row::-webkit-scrollbar { display: none; }
+
+    .mobile-tabs { display: none; }
+    .mobile-tab { display: none; }
+
+    .mob-nav-btn {
+      flex-shrink: 0;
+      font-family: var(--sans); font-size: 0.76rem;
+      font-weight: 600; letter-spacing: 0.05em;
+      padding: 8px 18px; border-radius: 100px;
+      color: var(--ink-soft); cursor: pointer;
+      border: 1.5px solid var(--linen); background: transparent;
+      transition: background .2s, color .2s, border-color .2s;
+      white-space: nowrap;
     }
-    .mobile-tab:hover { background: var(--sage-pale); color: var(--sage); }
-    .mobile-tab.active { background: var(--sage-pale); color: var(--sage); }
+    .mob-nav-btn:hover { background: var(--sage-pale); color: var(--sage); border-color: var(--sage-light); }
+    .mob-nav-btn.active {
+      background: var(--white); color: var(--sage);
+      border-color: var(--sage); box-shadow: 0 1px 6px rgba(0,0,0,.08);
+    }
 
     /* ══════════════════════════════════════
        ██ PAGE 1: LANDING PRINCIPAL
@@ -1282,6 +1290,24 @@
       .nav-cta { display: none; }
       .photo-wrap { aspect-ratio: 3/4; }
     }
+
+    /* ══════════════════════════════════════
+       DECORATIVE CURVED LINES — off-white sections
+    ══════════════════════════════════════ */
+    #hero,
+    #metodo,
+    #cta-final,
+    .prog-hero,
+    .cons-dif {
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600' fill='none'%3E%3Cpath d='M420,0 A180,180 0 0 1 600,180' stroke='%23C6A75E' stroke-width='1.5' opacity='0.55'/%3E%3Cpath d='M280,0 A320,320 0 0 1 600,320' stroke='%23C6A75E' stroke-width='1.5' opacity='0.42'/%3E%3Cpath d='M140,0 A460,460 0 0 1 600,460' stroke='%23C6A75E' stroke-width='1.5' opacity='0.30'/%3E%3Cpath d='M0,0 A600,600 0 0 1 600,600' stroke='%23C6A75E' stroke-width='1.5' opacity='0.20'/%3E%3Cpath d='M-140,0 A740,740 0 0 1 600,740' stroke='%23C6A75E' stroke-width='1' opacity='0.12'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600' fill='none'%3E%3Cpath d='M180,600 A180,180 0 0 0 0,420' stroke='%23C6A75E' stroke-width='1.5' opacity='0.55'/%3E%3Cpath d='M320,600 A320,320 0 0 0 0,280' stroke='%23C6A75E' stroke-width='1.5' opacity='0.42'/%3E%3Cpath d='M460,600 A460,460 0 0 0 0,140' stroke='%23C6A75E' stroke-width='1.5' opacity='0.30'/%3E%3Cpath d='M600,600 A600,600 0 0 0 0,0' stroke='%23C6A75E' stroke-width='1.5' opacity='0.20'/%3E%3Cpath d='M740,600 A740,740 0 0 0 0,-140' stroke='%23C6A75E' stroke-width='1' opacity='0.12'/%3E%3C/svg%3E");
+      background-position: top right, bottom left;
+      background-repeat: no-repeat, no-repeat;
+      background-size: clamp(340px, 55vw, 680px) clamp(340px, 55vw, 680px),
+                       clamp(280px, 45vw, 560px) clamp(280px, 45vw, 560px);
+    }
+
   </style>
 </head>
 <body>
@@ -1302,15 +1328,13 @@
         <button class="nav-tab" onclick="showPage('consultoria')" id="tab-consultoria">Consultoria Premium</button>
       </nav>
 
-      <!-- Mobile menu button -->
-      <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-          <path d="M2 5h14M2 9h14M2 13h14"/>
-        </svg>
-        Menu
-      </button>
-
       <a href="https://wa.me/5500000000000" class="nav-cta" target="_blank" rel="noopener">Agendar</a>
+    </div>
+    <!-- Mobile second-row nav — always visible on small screens -->
+    <div class="mobile-nav-row" id="mobileNavRow">
+      <button class="mob-nav-btn active" onclick="showPage('home')" id="mob-tab-home">Início</button>
+      <button class="mob-nav-btn" onclick="showPage('programas')" id="mob-tab-programas">Programas</button>
+      <button class="mob-nav-btn" onclick="showPage('consultoria')" id="mob-tab-consultoria">Consultoria Premium</button>
     </div>
   </div>
 </header>
@@ -2029,8 +2053,8 @@
     document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
     const dt = document.getElementById('tab-' + id);
     if (dt) dt.classList.add('active');
-    // Update mobile tabs
-    document.querySelectorAll('.mobile-tab').forEach(t => t.classList.remove('active'));
+    // Update mobile nav row buttons
+    document.querySelectorAll('.mob-nav-btn').forEach(t => t.classList.remove('active'));
     const mt = document.getElementById('mob-tab-' + id);
     if (mt) mt.classList.add('active');
     // Scroll to top
