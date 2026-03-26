@@ -235,12 +235,15 @@
     }
     .mobile-menu-btn {
       display: none; align-items: center; gap: 8px;
-      background: none; border: none; cursor: pointer;
-      font-size: 0.74rem; font-weight: 600; color: var(--ink);
+      background: none; border: 1.5px solid var(--sage-light); cursor: pointer;
+      font-size: 0.74rem; font-weight: 600; color: var(--sage);
+      padding: 9px 16px; border-radius: 100px;
+      transition: background .2s, border-color .2s;
     }
+    .mobile-menu-btn:hover { background: var(--sage-pale); border-color: var(--sage); }
     .mobile-tabs {
       display: none;
-      position: fixed; top: 60px; left: 0; right: 0; z-index: 299;
+      position: fixed; top: 65px; left: 0; right: 0; z-index: 299;
       background: var(--white);
       border-bottom: 1px solid var(--linen);
       padding: 12px var(--px);
