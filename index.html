@@ -228,29 +228,76 @@
     }
     .nav-cta:hover { background: var(--sage-pale); border-color: var(--sage); }
 
-    /* Mobile: hide desktop nav tabs pill, show second-row nav instead */
-    @media (max-width: 860px) {
-      .nav-tabs { display: none; }
-      .mobile-menu-btn { display: none; }
-      .mobile-nav-row { display: flex; }
-    }
-    .mobile-menu-btn { display: none; }
-
-    /* Second nav row — always visible on mobile */
-    .mobile-nav-row {
+    /* Mobile navigation: desktop tabs hide, hamburger appears */
+    .mobile-menu-btn {
       display: none;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      gap: 6px;
-      padding: 0 var(--px) 12px;
-      border-bottom: 1px solid var(--linen);
-      background: rgba(255,255,255,0.95);
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      border: 1.5px solid var(--linen);
+      background: rgba(255,255,255,.88);
+      align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background .2s, border-color .2s, transform .2s;
+      flex-shrink: 0;
     }
-    .mobile-nav-row::-webkit-scrollbar { display: none; }
+    .mobile-menu-btn:hover {
+      background: var(--white);
+      border-color: var(--sage-light);
+      transform: translateY(-1px);
+    }
+    .mobile-menu-btn svg {
+      width: 20px; height: 20px;
+      stroke: var(--sage);
+      fill: none; stroke-width: 1.8;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
 
-    .mobile-tabs { display: none; }
-    .mobile-tab { display: none; }
+    .mobile-nav-row { display: none; }
+
+    .mobile-tabs {
+      display: none;
+      position: fixed;
+      top: 84px;
+      left: var(--px);
+      right: var(--px);
+      z-index: 290;
+      background: rgba(255,255,255,.98);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--linen);
+      border-radius: 18px;
+      box-shadow: 0 18px 44px rgba(0,0,0,.10);
+      padding: 10px;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .mobile-tabs.open { display: flex; }
+
+    .mobile-tab {
+      display: flex;
+      width: 100%;
+      text-align: left;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 13px 16px;
+      border-radius: 12px;
+      color: var(--ink-soft);
+      cursor: pointer;
+      border: 1px solid transparent;
+      background: transparent;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+    .mobile-tab:hover {
+      background: var(--sage-pale);
+      color: var(--sage);
+      border-color: var(--sage-light);
+    }
+    .mobile-tab.active {
+      background: var(--off-white);
+      color: var(--sage);
+      border-color: var(--sage-light);
+    }
 
     .mob-nav-btn {
       flex-shrink: 0;
@@ -266,6 +313,12 @@
     .mob-nav-btn.active {
       background: var(--white); color: var(--sage);
       border-color: var(--sage); box-shadow: 0 1px 6px rgba(0,0,0,.08);
+    }
+
+    @media (max-width: 860px) {
+      .nav-tabs { display: none; }
+      .mobile-menu-btn { display: inline-flex; }
+      .nav-cta { display: none; }
     }
 
     /* ══════════════════════════════════════
@@ -1328,22 +1381,22 @@
         <button class="nav-tab" onclick="showPage('consultoria')" id="tab-consultoria">Consultoria Premium</button>
       </nav>
 
+      <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileTabs">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+
       <a href="https://wa.me/5500000000000" class="nav-cta" target="_blank" rel="noopener">Agendar</a>
-    </div>
-    <!-- Mobile second-row nav — always visible on small screens -->
-    <div class="mobile-nav-row" id="mobileNavRow">
-      <button class="mob-nav-btn active" onclick="showPage('home')" id="mob-tab-home">Início</button>
-      <button class="mob-nav-btn" onclick="showPage('programas')" id="mob-tab-programas">Programas</button>
-      <button class="mob-nav-btn" onclick="showPage('consultoria')" id="mob-tab-consultoria">Consultoria Premium</button>
     </div>
   </div>
 </header>
 
 <!-- Mobile dropdown tabs -->
 <nav class="mobile-tabs" id="mobileTabs">
-  <button class="mobile-tab active" onclick="showPage('home');toggleMobileMenu()" id="mob-tab-home">Início</button>
-  <button class="mobile-tab" onclick="showPage('programas');toggleMobileMenu()" id="mob-tab-programas">Programas de Acompanhamento</button>
-  <button class="mobile-tab" onclick="showPage('consultoria');toggleMobileMenu()" id="mob-tab-consultoria">Consultoria Premium</button>
+  <button class="mobile-tab active" onclick="showPage('home');toggleMobileMenu()" id="mobile-menu-home">Início</button>
+  <button class="mobile-tab" onclick="showPage('programas');toggleMobileMenu()" id="mobile-menu-programas">Programas de Acompanhamento</button>
+  <button class="mobile-tab" onclick="showPage('consultoria');toggleMobileMenu()" id="mobile-menu-consultoria">Consultoria Premium</button>
 </nav>
 
 
@@ -2053,10 +2106,17 @@
     document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
     const dt = document.getElementById('tab-' + id);
     if (dt) dt.classList.add('active');
-    // Update mobile nav row buttons
-    document.querySelectorAll('.mob-nav-btn').forEach(t => t.classList.remove('active'));
-    const mt = document.getElementById('mob-tab-' + id);
+    // Update mobile dropdown buttons
+    document.querySelectorAll('.mobile-tab').forEach(t => t.classList.remove('active'));
+    const mt = document.getElementById('mobile-menu-' + id);
     if (mt) mt.classList.add('active');
+
+    // Close mobile menu after navigation
+    const menu = document.getElementById('mobileTabs');
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    if (menu) menu.classList.remove('open');
+    if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+
     // Scroll to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
     // Re-trigger animations for the new page
@@ -2065,14 +2125,39 @@
 
   /* ─── Mobile menu toggle ─── */
   function toggleMobileMenu() {
-    document.getElementById('mobileTabs').classList.toggle('open');
+    const menu = document.getElementById('mobileTabs');
+    const btn = document.getElementById('mobileMenuBtn');
+    if (!menu) return;
+    const isOpen = menu.classList.toggle('open');
+    if (btn) btn.setAttribute('aria-expanded', String(isOpen));
   }
   // Close on outside click
   document.addEventListener('click', e => {
     const menu = document.getElementById('mobileTabs');
     const btn = document.getElementById('mobileMenuBtn');
-    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+    if (!menu) return;
+
+    if (menu.classList.contains('open') && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
       menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close menu on ESC or desktop resize
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    const menu = document.getElementById('mobileTabs');
+    const btn = document.getElementById('mobileMenuBtn');
+    if (menu) menu.classList.remove('open');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 860) {
+      const menu = document.getElementById('mobileTabs');
+      const btn = document.getElementById('mobileMenuBtn');
+      if (menu) menu.classList.remove('open');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
     }
   });
 
