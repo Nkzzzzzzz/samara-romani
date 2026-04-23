@@ -11,29 +11,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ══════════════════════════════════════
-       TOKENS
-    ══════════════════════════════════════ */
+    
     :root {
-      /* ── Paleta Oliva / Bege / Rosé / Dourado ── */
+      
       --white:       #FFFFFF;
-      --off-white:   #F5F1E8;   /* Bege */
-      --cream:       #EEE8D8;   /* Bege médio */
-      --linen:       #EADAD6;   /* Rosé leve */
-      --sand:        #DDD0CA;   /* Rosé médio */
+      --off-white:   #F5F1E8;   
+      --cream:       #EEE8D8;   
+      --linen:       #EADAD6;   
+      --sand:        #DDD0CA;   
 
-      /* Acento principal: dourado */
-      --sage:        #C6A75E;   /* Dourado */
+      
+      --sage:        #C6A75E;   
       --sage-mid:    #D4B870;
-      --sage-light:  #EADAD6;   /* Rosé leve */
-      --sage-pale:   #F5F1E8;   /* Bege suave */
+      --sage-light:  #EADAD6;   
+      --sage-pale:   #F5F1E8;   
 
-      /* Acento secundário */
+      
       --copper:      #C6A75E;
       --copper-light:#D4B870;
       --copper-pale: #F5F1E8;
 
-      /* Tipografia verde oliva */
+      
       --ink:         #3F5B4B;
       --ink-mid:     #567563;
       --ink-soft:    #6E8F7D;
@@ -63,9 +61,7 @@
     ul { list-style: none; }
     img { display: block; max-width: 100%; }
 
-    /* ══════════════════════════════════════
-       LAYOUT UTILS
-    ══════════════════════════════════════ */
+    
     .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--px); }
 
     .eyebrow {
@@ -98,9 +94,7 @@
       background: var(--sage); border-radius: 2px; margin: 18px 0;
     }
 
-    /* ══════════════════════════════════════
-       REVEAL ANIMATIONS
-    ══════════════════════════════════════ */
+    
     [data-anim] {
       opacity: 0;
       transition: opacity .85s cubic-bezier(.22,1,.36,1),
@@ -117,9 +111,7 @@
     .d4 { transition-delay: .44s !important; }
     .d5 { transition-delay: .58s !important; }
 
-    /* ══════════════════════════════════════
-       BUTTONS
-    ══════════════════════════════════════ */
+    
     .btn {
       display: inline-flex; align-items: center; gap: 9px;
       font-family: var(--sans); font-size: 0.8rem;
@@ -143,7 +135,7 @@
     }
     .btn-outline:hover { background: var(--sage-pale); transform: translateY(-2px); }
 
-    /* WhatsApp button — refined, no chunky green icon */
+    
     .btn-wpp {
       background: var(--ink); color: var(--white);
       box-shadow: 0 4px 18px rgba(63,91,75,.18);
@@ -161,15 +153,11 @@
     .btn-lg { padding: 18px 44px; font-size: 0.85rem; }
     .btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
 
-    /* ══════════════════════════════════════
-       PAGE TABS — the navigation system
-    ══════════════════════════════════════ */
+    
     .page-view { display: none; }
     .page-view.active { display: block; }
 
-    /* ══════════════════════════════════════
-       HEADER / NAV
-    ══════════════════════════════════════ */
+    
     .site-header {
       position: fixed; top: 0; left: 0; right: 0; z-index: 300;
       padding: 18px 0;
@@ -194,7 +182,7 @@
       letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage);
     }
 
-    /* Tab nav links */
+    
     .nav-tabs {
       display: flex; align-items: center; gap: 4px;
       background: var(--off-white);
@@ -228,7 +216,7 @@
     }
     .nav-cta:hover { background: var(--sage-pale); border-color: var(--sage); }
 
-    /* Mobile navigation: desktop tabs hide, hamburger appears */
+    
     .mobile-menu-btn {
       display: none;
       width: 46px; height: 46px;
@@ -321,11 +309,9 @@
       .nav-cta { display: none; }
     }
 
-    /* ══════════════════════════════════════
-       ██ PAGE 1: LANDING PRINCIPAL
-    ══════════════════════════════════════ */
+    
 
-    /* HERO */
+    
     #hero {
       background: var(--off-white);
       min-height: 100svh;
@@ -391,7 +377,7 @@
     }
     .hero-microcopy svg { width: 13px; height: 13px; stroke: var(--sage); fill: none; stroke-linecap: round; }
 
-    /* Hero right card */
+    
     .hero-card {
       background: var(--white); border: 1px solid var(--linen);
       border-radius: 20px; padding: 32px;
@@ -421,9 +407,9 @@
       color: var(--sage); margin-top: 10px;
     }
 
-    /* marquee removido */
+    
 
-    /* PROBLEMA */
+    
     #problema { background: var(--white); padding: var(--sec) 0; }
     .problema-grid {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -461,7 +447,7 @@
     }
     .psc-l { font-size: 0.86rem; color: var(--ink-mid); line-height: 1.5; }
 
-    /* SOLUÇÃO */
+    
     #solucao { background: var(--cream); padding: var(--sec) 0; position: relative; overflow: hidden; }
     .solucao-blob {
       position: absolute; top: -100px; right: -100px;
@@ -495,7 +481,7 @@
     .pillar h3 { font-family: var(--sans); font-size: .92rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
     .pillar p { font-size: .82rem; color: var(--ink-soft); line-height: 1.62; }
 
-    /* APRESENTAÇÃO */
+    
     #apresentacao { background: var(--white); padding: var(--sec) 0; }
     .apres-grid {
       display: grid; grid-template-columns: 1fr 1.3fr;
@@ -563,7 +549,7 @@
     .atag:hover { border-color: var(--sage-light); background: var(--sage-pale); }
     .atag svg { width: 11px; height: 11px; stroke: var(--sage); fill: none; stroke-width: 1.5; stroke-linecap: round; }
 
-    /* MÉTODO */
+    
     #metodo { background: var(--off-white); padding: var(--sec) 0; }
     .metodo-header {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -603,7 +589,7 @@
     .step-txt h3 { font-family: var(--sans); font-size: .96rem; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
     .step-txt p { font-size: .86rem; color: var(--ink-soft); line-height: 1.62; }
 
-    /* BENEFÍCIOS */
+    
     #beneficios { background: var(--sage); padding: var(--sec) 0; position: relative; overflow: hidden; }
     .ben-deco {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
@@ -632,7 +618,7 @@
     .ben-card h3 { font-family: var(--sans); font-size: .94rem; font-weight: 600; color: var(--white); margin-bottom: 7px; }
     .ben-card p { font-size: .82rem; color: rgba(255,255,255,.58); line-height: 1.62; }
 
-    /* DEPOIMENTOS */
+    
     #prova { background: var(--white); padding: var(--sec) 0; }
     .prova-header { text-align: center; max-width: 560px; margin: 0 auto clamp(40px,6vw,72px); }
     .prova-header .eyebrow { justify-content: center; }
@@ -662,7 +648,7 @@
     .testi-name strong { display: block; font-size: .82rem; font-weight: 600; color: var(--ink); }
     .testi-name span { font-size: .72rem; color: var(--ink-muted); }
 
-    /* TRUST BAR */
+    
     .trust-bar {
       margin-top: 56px; display: grid;
       grid-template-columns: repeat(4,1fr); gap: 2px;
@@ -684,7 +670,7 @@
     .trust-info strong { display: block; font-size: .86rem; font-weight: 600; color: var(--ink); }
     .trust-info span { font-size: .74rem; color: var(--ink-soft); }
 
-    /* OFERTA */
+    
     #oferta { background: var(--cream); padding: var(--sec) 0; }
     .oferta-grid {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -724,7 +710,7 @@
     .inc-icon svg { width: 9px; height: 9px; stroke: var(--sage); fill: none; stroke-width: 2.5; stroke-linecap: round; }
     .inc-note { font-size: .74rem; color: var(--ink-muted); text-align: center; margin-top: 10px; }
 
-    /* CTA FINAL */
+    
     #cta-final { background: var(--off-white); padding: clamp(80px,12vw,164px) 0; position: relative; overflow: hidden; }
     .cta-shape {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
@@ -739,7 +725,7 @@
     .cta-note { font-size: .74rem; color: var(--ink-muted); display: flex; align-items: center; justify-content: center; gap: 7px; flex-wrap: wrap; }
     .cta-note-dot { color: var(--sand); }
 
-    /* FAQ */
+    
     #faq { background: var(--white); padding: var(--sec) 0; }
     .faq-grid {
       display: grid; grid-template-columns: 1fr 1.5fr;
@@ -768,9 +754,7 @@
     .faq-a-inner { padding-bottom: 18px; font-size: .88rem; color: var(--ink-mid); line-height: 1.75; }
     .faq-item.open .faq-a { max-height: 320px; }
 
-    /* ══════════════════════════════════════
-       ██ PAGE 2: PROGRAMAS
-    ══════════════════════════════════════ */
+    
     .page-programas { background: var(--white); }
 
     .prog-hero {
@@ -801,7 +785,7 @@
       color: var(--ink-mid); line-height: 1.8; max-width: 560px;
     }
 
-    /* Perspectiva: comparação */
+    
     .perspectiva-sec { background: var(--white); padding: var(--sec) 0; }
     .perspectiva-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 48px;
@@ -836,7 +820,7 @@
       font-size: clamp(1rem, 1.8vw, 1.25rem); color: rgba(255,255,255,.78); line-height: 1.5;
     }
 
-    /* Como funciona o método — programas */
+    
     .como-sec { background: var(--cream); padding: var(--sec) 0; }
     .como-cards {
       display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-top: 48px;
@@ -857,7 +841,7 @@
     .como-card h3 { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 7px; }
     .como-card p { font-size: .87rem; color: var(--ink-soft); line-height: 1.68; }
 
-    /* Programa Premium — destaque */
+    
     .premium-sec { background: var(--white); padding: var(--sec) 0; }
     .premium-hero-card {
       background: linear-gradient(135deg, #3D2820 0%, #2A1A12 100%);
@@ -889,7 +873,7 @@
     .premium-hero-card h2 em { font-style: italic; font-weight: 300; color: var(--sage-light); }
     .premium-hero-card p { font-size: clamp(.9rem, 1.4vw, 1rem); color: rgba(255,255,255,.58); line-height: 1.78; max-width: 640px; }
 
-    /* Para quem é — premium */
+    
     .premium-forquem {
       display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px;
     }
@@ -912,7 +896,7 @@
     .pq-col.yes .pq-row svg { stroke: var(--sage); fill: none; stroke-width: 2; stroke-linecap: round; }
     .pq-col.no .pq-row svg { stroke: var(--copper); fill: none; stroke-width: 2; stroke-linecap: round; }
 
-    /* O que está incluído */
+    
     .incluido-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 40px; }
     .incluido-card {
       background: var(--off-white); border: 1px solid var(--linen);
@@ -928,7 +912,7 @@
     .incluido-card h4 { font-size: .9rem; font-weight: 600; color: var(--ink); margin-bottom: 7px; }
     .incluido-card p { font-size: .8rem; color: var(--ink-soft); line-height: 1.62; }
 
-    /* Planos / preços */
+    
     .planos-sec { background: var(--cream); padding: var(--sec) 0; }
     .planos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 44px; }
     .plano-card {
@@ -973,7 +957,7 @@
     .plano-feature svg { flex-shrink: 0; width: 14px; height: 14px; stroke: var(--sage); fill: none; stroke-width: 2; stroke-linecap: round; }
     .plano-feature span { font-size: .84rem; color: var(--ink-mid); }
 
-    /* Casais */
+    
     .casais-sec { background: var(--white); padding: var(--sec) 0; }
     .casais-grid {
       display: grid; grid-template-columns: 1fr 1fr;
@@ -1003,7 +987,7 @@
     .casais-card h4 { font-size: .94rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
     .casais-card p { font-size: .84rem; color: var(--ink-soft); line-height: 1.58; }
 
-    /* Outras opções */
+    
     .outras-sec { background: var(--cream); padding: var(--sec) 0; }
     .outras-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
     .outra-card {
@@ -1027,7 +1011,7 @@
       font-size: .82rem; color: var(--ink-mid); line-height: 1.55;
     }
 
-    /* CTA programas */
+    
     .prog-cta { background: var(--sage); padding: clamp(64px,9vw,120px) 0; text-align: center; position: relative; overflow: hidden; }
     .prog-cta-deco {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
@@ -1046,9 +1030,7 @@
     .prog-cta .btn-wpp:hover { background: var(--cream); }
     .prog-cta .btn-wpp .wpp-dot { background: #25D366; }
 
-    /* ══════════════════════════════════════
-       ██ PAGE 3: CONSULTORIA PREMIUM
-    ══════════════════════════════════════ */
+    
     .page-consultoria { background: var(--white); }
 
     .cons-hero {
@@ -1073,7 +1055,7 @@
     .cons-hero .eyebrow { color: var(--sage-light); }
     .cons-hero .eyebrow::before { background: var(--sage-light); }
 
-    /* Problema verdadeiro */
+    
     .cons-prob { background: var(--white); padding: var(--sec) 0; }
     .cons-prob-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 44px; }
     .cons-prob-card {
@@ -1095,7 +1077,7 @@
     .cons-prob-card h3 { font-size: .96rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
     .cons-prob-card p { font-size: .84rem; color: var(--ink-soft); line-height: 1.65; }
 
-    /* Diferença de abordagem */
+    
     .cons-diff { background: var(--cream); padding: var(--sec) 0; }
     .cons-diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-top: 40px; }
     .cons-diff-card { padding: clamp(28px,4vw,44px); }
@@ -1111,7 +1093,7 @@
     }
     .cons-diff-card p { font-size: .9rem; color: var(--ink-mid); line-height: 1.75; }
 
-    /* Processo na prática */
+    
     .cons-proc { background: var(--white); padding: var(--sec) 0; }
     .cons-proc-steps { display: flex; flex-direction: column; gap: 2px; margin-top: 40px; }
     .cons-proc-step {
@@ -1134,7 +1116,7 @@
     .cons-proc-body h3 { font-size: .96rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
     .cons-proc-body p { font-size: .86rem; color: var(--ink-soft); line-height: 1.65; }
 
-    /* Diferenciais */
+    
     .cons-dif { background: var(--off-white); padding: var(--sec) 0; }
     .cons-dif-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; margin-top: 40px; }
     .cons-dif-card {
@@ -1151,7 +1133,7 @@
     .cons-dif-card h3 { font-size: .96rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
     .cons-dif-card p { font-size: .85rem; color: var(--ink-soft); line-height: 1.65; }
 
-    /* Formatos / investimento */
+    
     .cons-invest { background: var(--cream); padding: var(--sec) 0; }
     .cons-invest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 44px; }
     .cons-invest-card {
@@ -1194,7 +1176,7 @@
     .cons-invest-card.featured .btn-wpp:hover { background: var(--cream); }
     .cons-invest-card.featured .btn-wpp .wpp-dot { background: #25D366; }
 
-    /* Última palavra */
+    
     .cons-ultima { background: var(--ink); padding: var(--sec) 0; }
     .cons-ultima-inner { max-width: 680px; margin: 0 auto; text-align: center; }
     .cons-ultima h2 {
@@ -1209,9 +1191,7 @@
     .cons-ultima .btn-wpp { background: var(--sage); color: var(--white); }
     .cons-ultima .btn-wpp:hover { background: var(--sage-mid); }
 
-    /* ══════════════════════════════════════
-       FOOTER (shared)
-    ══════════════════════════════════════ */
+    
     .site-footer { background: #2A1A12; padding: 48px 0 28px; }
     .footer-top {
       display: flex; align-items: center; justify-content: space-between;
@@ -1225,11 +1205,9 @@
     .footer-nav a:hover { color: var(--sage-mid); }
     .footer-bottom { padding-top: 22px; font-size: .7rem; color: rgba(255,255,255,.16); text-align: center; letter-spacing: .04em; }
 
-    /* ══════════════════════════════════════
-       RESPONSIVE
-    ══════════════════════════════════════ */
+    
 
-    /* ── Tablet largo (≤1024px) ── */
+    
     @media (max-width: 1024px) {
       .pillars         { grid-template-columns: repeat(2,1fr); }
       .ben-grid        { grid-template-columns: repeat(2,1fr); }
@@ -1240,101 +1218,101 @@
       .como-cards      { grid-template-columns: repeat(2,1fr); }
     }
 
-    /* ── Tablet (≤860px) ── */
+    
     @media (max-width: 860px) {
-      /* Grids de 2 colunas viram 1 coluna */
+      
       .hero-grid, .problema-grid, .apres-grid, .metodo-header,
       .oferta-grid, .faq-grid, .casais-grid, .perspectiva-grid,
       .cons-diff-grid, .cons-invest-grid, .premium-forquem,
       .outras-grid { grid-template-columns: 1fr; }
 
-      /* Hero */
+      
       .hero-right { display: none; }
       .hero-headline { font-size: clamp(2rem, 6vw, 3.4rem); }
 
-      /* Testimonials */
+      
       .testimonials { grid-template-columns: repeat(2,1fr); }
 
-      /* Planos */
+      
       .planos-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
       .plano-card.featured { transform: none; }
       .plano-card.featured:hover { transform: translateY(-6px); }
 
-      /* Perspectiva e Diff */
+      
       .persp-card.bad  { border-radius: 16px 16px 0 0; }
       .persp-card.good { border-radius: 0 0 16px 16px; }
       .cons-diff-card.old { border-radius: 16px 16px 0 0; }
       .cons-diff-card.new { border-radius: 0 0 16px 16px; }
 
-      /* FAQ sticky vira estático */
+      
       .faq-sticky { position: static; }
 
-      /* Photo frame: menor no tablet */
+      
       .photo-wrap { aspect-ratio: 4/3; }
 
-      /* Balão da foto: evitar sair da tela */
+      
       .photo-float { left: -6px; bottom: -6px; }
 
-      /* Steps */
+      
       .step { grid-template-columns: 64px 1fr; }
       .cons-proc-step { grid-template-columns: 56px 1fr; }
 
-      /* Footer nav: wrap melhor */
+      
       .footer-nav { gap: 14px; }
     }
 
-    /* ── Mobile (≤600px) ── */
+    
     @media (max-width: 600px) {
-      /* Todos os grids para 1 coluna */
+      
       .pillars, .ben-grid, .trust-bar, .incluido-grid,
       .cons-prob-grid, .cons-dif-grid, .como-cards,
       .planos-grid, .testimonials { grid-template-columns: 1fr; }
 
       .planos-grid { max-width: 100%; }
 
-      /* Hero */
+      
       .hero-cta-group { flex-direction: column; align-items: flex-start; }
       .hero-cta-group .btn { width: 100%; justify-content: center; }
 
-      /* CTAs */
+      
       .cta-btns { flex-direction: column; align-items: center; }
       .cta-btns .btn { width: 100%; max-width: 320px; justify-content: center; }
 
-      /* Buttons largura total em seções-chave */
+      
       #cta-final .btn,
       .prog-cta .btn,
       .cons-ultima .btn { width: 100%; max-width: 320px; justify-content: center; }
 
-      /* Steps menores */
+      
       .step { grid-template-columns: 50px 1fr; }
       .step-num-n { font-size: 1.2rem; }
       .cons-proc-step { grid-template-columns: 48px 1fr; }
 
-      /* Photo: quadrado no mobile */
+      
       .photo-wrap { aspect-ratio: 1/1; }
       .photo-float { left: 8px; bottom: 8px; font-size: .8rem; padding: 9px 12px; gap: 7px; }
       .photo-float-icon { width: 28px; height: 28px; }
       .photo-corner { width: 40px; height: 40px; }
 
-      /* Cards de investimento */
+      
       .cons-invest-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
 
-      /* Outras grid */
+      
       .outras-grid { grid-template-columns: 1fr; }
 
-      /* Persp footer */
+      
       .persp-footer { border-radius: 0 0 16px 16px; }
 
-      /* Nav CTA: hide text, keep button small */
+      
       .nav-cta { padding: 8px 14px; font-size: .68rem; }
 
-      /* Footer */
+      
       .footer-top { flex-direction: column; align-items: flex-start; gap: 16px; }
       .footer-nav { gap: 10px; }
       .footer-nav a { font-size: .64rem; }
     }
 
-    /* ── Mobile pequeno (≤400px) ── */
+    
     @media (max-width: 400px) {
       :root { --px: 16px; }
       .btn-lg { padding: 15px 28px; font-size: .78rem; }
@@ -1344,9 +1322,7 @@
       .photo-wrap { aspect-ratio: 3/4; }
     }
 
-    /* ══════════════════════════════════════
-       DECORATIVE CURVED LINES — off-white sections
-    ══════════════════════════════════════ */
+    
     #hero,
     #metodo,
     #cta-final,
@@ -1365,7 +1341,7 @@
 </head>
 <body>
 
-<!-- ════════ HEADER ════════ -->
+
 <header class="site-header" id="siteHeader">
   <div class="wrap">
     <div class="nav-row">
@@ -1374,7 +1350,7 @@
         <span class="logo-sub">Nutricionista Clínica</span>
       </div>
 
-      <!-- Desktop tabs -->
+      
       <nav class="nav-tabs" id="desktopTabs">
         <button class="nav-tab active" onclick="showPage('home')" id="tab-home">Início</button>
         <button class="nav-tab" onclick="showPage('programas')" id="tab-programas">Programas</button>
@@ -1392,7 +1368,7 @@
   </div>
 </header>
 
-<!-- Mobile dropdown tabs -->
+
 <nav class="mobile-tabs" id="mobileTabs">
   <button class="mobile-tab active" onclick="showPage('home');toggleMobileMenu()" id="mobile-menu-home">Início</button>
   <button class="mobile-tab" onclick="showPage('programas');toggleMobileMenu()" id="mobile-menu-programas">Programas de Acompanhamento</button>
@@ -1400,12 +1376,10 @@
 </nav>
 
 
-<!-- ════════════════════════════════════════
-     PAGE 1: HOME
-════════════════════════════════════════ -->
+
 <div class="page-view active" id="page-home">
 
-  <!-- HERO -->
+  
   <section id="hero">
     <div class="hero-shape-1"></div>
     <div class="hero-shape-2"></div>
@@ -1450,9 +1424,9 @@
     </div>
   </section>
 
-  <!-- marquee removido -->
+  
 
-  <!-- PROBLEMA -->
+  
   <section id="problema">
     <div class="wrap">
       <div class="problema-grid">
@@ -1482,7 +1456,7 @@
     </div>
   </section>
 
-  <!-- SOLUÇÃO -->
+  
   <section id="solucao">
     <div class="solucao-blob"></div>
     <div class="wrap solucao-inner">
@@ -1501,7 +1475,7 @@
     </div>
   </section>
 
-  <!-- APRESENTAÇÃO -->
+  
   <section id="apresentacao">
     <div class="wrap">
       <div class="apres-grid">
@@ -1535,7 +1509,7 @@
     </div>
   </section>
 
-  <!-- MÉTODO -->
+  
   <section id="metodo">
     <div class="wrap">
       <div class="metodo-header">
@@ -1558,7 +1532,7 @@
     </div>
   </section>
 
-  <!-- BENEFÍCIOS -->
+  
   <section id="beneficios">
     <div class="ben-deco" aria-hidden="true">Resultado</div>
     <div class="wrap ben-inner">
@@ -1578,7 +1552,7 @@
     </div>
   </section>
 
-  <!-- DEPOIMENTOS -->
+  
   <section id="prova">
     <div class="wrap">
       <div class="prova-header">
@@ -1600,7 +1574,7 @@
     </div>
   </section>
 
-  <!-- OFERTA -->
+  
   <section id="oferta">
     <div class="wrap">
       <div class="oferta-grid">
@@ -1636,7 +1610,7 @@
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  
   <section id="cta-final">
     <div class="cta-shape"></div>
     <div class="wrap">
@@ -1654,7 +1628,7 @@
     </div>
   </section>
 
-  <!-- FAQ -->
+  
   <section id="faq">
     <div class="wrap">
       <div class="faq-grid">
@@ -1677,12 +1651,10 @@
     </div>
   </section>
 
-</div><!-- /page-home -->
+</div>
 
 
-<!-- ════════════════════════════════════════
-     PAGE 2: PROGRAMAS
-════════════════════════════════════════ -->
+
 <div class="page-view page-programas" id="page-programas">
 
   <div class="prog-hero">
@@ -1695,7 +1667,7 @@
     </div>
   </div>
 
-  <!-- O Problema Real (do PDF) -->
+  
   <div class="perspectiva-sec">
     <div class="wrap">
       <span class="eyebrow" data-anim="up">O problema real</span>
@@ -1720,7 +1692,7 @@
     </div>
   </div>
 
-  <!-- Como funciona o método -->
+  
   <div class="como-sec">
     <div class="wrap">
       <span class="eyebrow" data-anim="up">Como funciona</span>
@@ -1736,7 +1708,7 @@
     </div>
   </div>
 
-  <!-- Programa Premium -->
+  
   <div class="premium-sec">
     <div class="wrap">
       <div class="premium-hero-card" data-anim="fade">
@@ -1747,7 +1719,7 @@
         </div>
       </div>
 
-      <!-- Para quem é / Para quem não é -->
+      
       <div class="premium-forquem" data-anim="up" data-d=".1">
         <div class="pq-col yes">
           <h4><span class="pq-col-icon"><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="7"/><path d="M6 9l2 2 4-4"/></svg></span>Este programa é para você se:</h4>
@@ -1767,7 +1739,7 @@
         </div>
       </div>
 
-      <!-- O que está incluído -->
+      
       <div style="margin-top:60px">
         <span class="eyebrow" data-anim="up">O que está incluído</span>
         <div class="divider" data-anim="fade" data-d=".1"></div>
@@ -1787,7 +1759,7 @@
     </div>
   </div>
 
-  <!-- Planos e preços -->
+  
   <div class="planos-sec">
     <div class="wrap">
       <span class="eyebrow" data-anim="up">Duração e investimento</span>
@@ -1843,7 +1815,7 @@
     </div>
   </div>
 
-  <!-- Casais -->
+  
   <div class="casais-sec">
     <div class="wrap">
       <div class="casais-grid">
@@ -1869,7 +1841,7 @@
     </div>
   </div>
 
-  <!-- Outras opções -->
+  
   <div class="outras-sec">
     <div class="wrap">
       <span class="eyebrow" data-anim="up">Outras opções</span>
@@ -1898,7 +1870,7 @@
     </div>
   </div>
 
-  <!-- CTA -->
+  
   <div class="prog-cta">
     <div class="prog-cta-deco" aria-hidden="true">Começa</div>
     <div class="wrap prog-cta-inner">
@@ -1910,12 +1882,10 @@
     </div>
   </div>
 
-</div><!-- /page-programas -->
+</div>
 
 
-<!-- ════════════════════════════════════════
-     PAGE 3: CONSULTORIA PREMIUM
-════════════════════════════════════════ -->
+
 <div class="page-view page-consultoria" id="page-consultoria">
 
   <div class="cons-hero">
@@ -1928,7 +1898,7 @@
     </div>
   </div>
 
-  <!-- O verdadeiro problema -->
+  
   <div class="cons-prob">
     <div class="wrap">
       <span class="eyebrow" data-anim="up">O verdadeiro problema</span>
@@ -1945,7 +1915,7 @@
     </div>
   </div>
 
-  <!-- Diferença de abordagem -->
+  
   <div class="cons-diff">
     <div class="wrap">
       <span class="eyebrow" data-anim="up">Como eu trabalho</span>
@@ -1966,7 +1936,7 @@
     </div>
   </div>
 
-  <!-- Processo na prática -->
+  
   <div class="cons-proc">
     <div class="wrap">
       <span class="eyebrow" data-anim="up">Na prática</span>
@@ -1981,7 +1951,7 @@
     </div>
   </div>
 
-  <!-- Diferenciais -->
+  
   <div class="cons-dif">
     <div class="wrap">
       <span class="eyebrow" data-anim="up">Diferenciais</span>
@@ -1996,7 +1966,7 @@
     </div>
   </div>
 
-  <!-- Objetivo do programa -->
+  
   <div style="background:var(--sage);padding:var(--sec) 0">
     <div class="wrap">
       <div style="max-width:720px;margin:0 auto;text-align:center">
@@ -2012,7 +1982,7 @@
     </div>
   </div>
 
-  <!-- Formatos e investimento -->
+  
   <div class="cons-invest">
     <div class="wrap">
       <span class="eyebrow" data-anim="up">Formatos e investimento</span>
@@ -2053,7 +2023,7 @@
     </div>
   </div>
 
-  <!-- Última palavra -->
+  
   <div class="cons-ultima">
     <div class="wrap">
       <div class="cons-ultima-inner">
@@ -2071,10 +2041,10 @@
     </div>
   </div>
 
-</div><!-- /page-consultoria -->
+</div>
 
 
-<!-- ════════ FOOTER (shared) ════════ -->
+
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
@@ -2096,34 +2066,34 @@
 
 
 <script>
-  /* ─── Page switcher ─── */
+  
   function showPage(id) {
-    // Hide all pages
+    
     document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
-    // Show target
+    
     document.getElementById('page-' + id).classList.add('active');
-    // Update desktop tabs
+    
     document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
     const dt = document.getElementById('tab-' + id);
     if (dt) dt.classList.add('active');
-    // Update mobile dropdown buttons
+    
     document.querySelectorAll('.mobile-tab').forEach(t => t.classList.remove('active'));
     const mt = document.getElementById('mobile-menu-' + id);
     if (mt) mt.classList.add('active');
 
-    // Close mobile menu after navigation
+    
     const menu = document.getElementById('mobileTabs');
     const menuBtn = document.getElementById('mobileMenuBtn');
     if (menu) menu.classList.remove('open');
     if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
 
-    // Scroll to top
+    
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Re-trigger animations for the new page
+    
     setTimeout(triggerAnimations, 100);
   }
 
-  /* ─── Mobile menu toggle ─── */
+  
   function toggleMobileMenu() {
     const menu = document.getElementById('mobileTabs');
     const btn = document.getElementById('mobileMenuBtn');
@@ -2131,7 +2101,7 @@
     const isOpen = menu.classList.toggle('open');
     if (btn) btn.setAttribute('aria-expanded', String(isOpen));
   }
-  // Close on outside click
+  
   document.addEventListener('click', e => {
     const menu = document.getElementById('mobileTabs');
     const btn = document.getElementById('mobileMenuBtn');
@@ -2143,7 +2113,7 @@
     }
   });
 
-  // Close menu on ESC or desktop resize
+  
   document.addEventListener('keydown', e => {
     if (e.key !== 'Escape') return;
     const menu = document.getElementById('mobileTabs');
@@ -2161,13 +2131,13 @@
     }
   });
 
-  /* ─── Header sticky ─── */
+  
   const nav = document.getElementById('siteHeader');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('stuck', window.scrollY > 40);
   }, { passive: true });
 
-  /* ─── Scroll reveal ─── */
+  
   function triggerAnimations() {
     const els = document.querySelectorAll('.page-view.active [data-anim]');
     const obs = new IntersectionObserver((entries) => {
@@ -2186,7 +2156,7 @@
   }
   triggerAnimations();
 
-  /* ─── FAQ accordion ─── */
+  
   document.addEventListener('click', e => {
     const q = e.target.closest('.faq-q');
     if (!q) return;
